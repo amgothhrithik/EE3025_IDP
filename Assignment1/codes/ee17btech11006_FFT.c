@@ -4,10 +4,7 @@
 #include <complex.h>
 #include <stdlib.h>
 
-/*
-This program calculates Fourier Transform 
-using the vector-radix FFT algorithm.
-*/
+
 
 void fft(double complex* x, long int N, int t){
         if(N<=1)return;
@@ -24,7 +21,7 @@ void fft(double complex* x, long int N, int t){
 
         for(int i=0;i<N/2;i++){
                                
-                double complex w = cexp(2*M_PI*i*I*t/N);                //Twiddle Factor
+                double complex w = cexp(2*M_PI*i*I*t/N);              
                 x[i] = even[i] + w*odd[i];
                 x[i+N/2] = even[i] - w*odd[i];
         }
